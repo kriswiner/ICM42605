@@ -107,7 +107,7 @@ uint8_t ICM42605::status()
 
 void ICM42605::init(uint8_t Ascale, uint8_t Gscale, uint8_t AODR, uint8_t GODR)
 {
-  uint8_t temp = _i2c_bus->readByte(ICM42605_ADDRESS, ICM42605_PWR_MGMT0); // make sure not to distrub reserved bit values
+  uint8_t temp = _i2c_bus->readByte(ICM42605_ADDRESS, ICM42605_PWR_MGMT0); // make sure not to disturb reserved bit values
   _i2c_bus->writeByte(ICM42605_ADDRESS, ICM42605_PWR_MGMT0, temp | 0x0F);  // enable gyro and accel in low noise mode
 
    temp = _i2c_bus->readByte(ICM42605_ADDRESS, ICM42605_GYRO_CONFIG0);
