@@ -135,7 +135,7 @@ void ICM42605::init(uint8_t Ascale, uint8_t Gscale, uint8_t AODR, uint8_t GODR)
    temp = _i2c_bus->readByte(ICM42605_ADDRESS, ICM42605_REG_BANK_SEL);
   _i2c_bus->writeByte(ICM42605_ADDRESS, ICM42605_REG_BANK_SEL, temp | 0x04 ); // select Bank 4
 
-     temp = _i2c_bus->readByte(ICM42605_ADDRESS, ICM42605_APEX_CONFIG5);
+   temp = _i2c_bus->readByte(ICM42605_ADDRESS, ICM42605_APEX_CONFIG5);
   _i2c_bus->writeByte(ICM42605_ADDRESS, ICM42605_APEX_CONFIG5, temp & ~(0x07) ); // select unitary mounting matrix
 
    temp = _i2c_bus->readByte(ICM42605_ADDRESS, ICM42605_REG_BANK_SEL);
