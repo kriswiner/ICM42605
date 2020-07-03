@@ -30,7 +30,6 @@ float ICM42605::getAres(uint8_t Ascale) {
   {
     // Possible accelerometer scales (and their register bit settings) are:
     // 2 Gs (00), 4 Gs (01), 8 Gs (10), and 16 Gs  (11).
-    // Here's a bit of an algorithm to calculate DPS/(ADC tick) based on that 2-bit value:
     case AFS_2G:
       _aRes = 2.0f / 32768.0f;
       return _aRes;
